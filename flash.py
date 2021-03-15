@@ -19,5 +19,5 @@ for i in range(10):
     blinkOnce(17)
 
 
-# cleanup
+# cleanup comment
 GPIO.cleanup()
