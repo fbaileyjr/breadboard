@@ -55,11 +55,11 @@ CODE = {
 
 
 def check_letter(letter):
-    for symbol in CODE[leeter.upper()]:
+    for symbol in CODE[letter.upper()]:
         if symbol == "-":
-            dash()
+            dash(led)
         elif symbol == ".":
-            dot()
+            dot(led)
         else:
             time.sleep(0.5)
 
@@ -78,10 +78,12 @@ def dot(led):
     time.sleep(0.2)
 
 
-while True:
-    input = raw_input("What would you like to send?\n")
+led = LED(17)
 
-    for letter in input:
+while True:
+    user_input = input("What would you like to send?\n")
+
+    for letter in user_input:
         check_letter(letter)
 
 #  blink(self, on_time=1, off_time=1, n=None, background=True)
