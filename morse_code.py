@@ -53,32 +53,35 @@ CODE = {
     "_": "..--.-",
 }
 
+
 def check_letter(letter):
     for symbol in CODE[leeter.upper()]:
-        if symbol == '-':
+        if symbol == "-":
             dash()
-        elif symbol == '.':
+        elif symbol == ".":
             dot()
         else:
-            time.sleep(.5)
+            time.sleep(0.5)
+
 
 def dash(led):
     led.on()
-    time.sleep(.5)
+    time.sleep(0.5)
     led.off()
-    time.sleep(.2)
+    time.sleep(0.2)
 
 
 def dot(led):
     led.on()
     time.sleep(1)
     led.off()
-    time.sleep(.2)
+    time.sleep(0.2)
 
 
 while True:
     input = raw_input("What would you like to send?\n")
 
     for letter in input:
+        check_letter(letter)
 
 #  blink(self, on_time=1, off_time=1, n=None, background=True)
